@@ -12,7 +12,14 @@ try:
     day =  int(input("Введите день рождения: "))
     month = int(input("Введите месяц рождения: "))
 
-    if day >= 21 and month == 3 or day <= 20 and month == 4 :
+    if day < 1 or day > 31 or month > 12 or month < 1:
+        redColor("Не правильно введенная дата")
+    elif day > 28 and month == 2:
+        redColor("Не правильно введенная дата")
+    elif (month == 4 or month == 6 or month == 9 or month == 11) and day > 30:
+        redColor("Не правильно введенная дата") 
+        
+    elif day >= 21 and month == 3 or day <= 20 and month == 4 :
         greenColor("Овен")
     elif day >= 21 and month == 4 or day <= 21 and month == 5:
         greenColor("Телец")
